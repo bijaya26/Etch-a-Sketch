@@ -14,9 +14,8 @@ body.appendChild(div);
 
 function divCreate(number){
     
+    
     for(let i=1; i<=number*number; i++){
-        
-        
         const insideDiv=document.createElement("div");
         insideDiv.style.width=(100/number)+"%";
         insideDiv.style.aspectRatio="1";
@@ -27,8 +26,9 @@ function divCreate(number){
             insideDiv.style.backgroundColor="orange";
         })
        
-       excitingGridDlt(insideDiv);
+       
     }
+    
      
     
      
@@ -37,6 +37,7 @@ function divCreate(number){
 
 function getButtonClicked(){
     button.addEventListener("click",()=>{
+        excitingGridDlt();
         const number= input.value;
         divCreate(number)
         input.value="";})};
@@ -44,8 +45,8 @@ function getButtonClicked(){
 getButtonClicked();
 
 function excitingGridDlt(indiv){
-    button.addEventListener("click",()=>{
-         div.removeChild(indiv);
-    })
+        while(div.firstChild){
+            div.removeChild(div.firstChild);
+        }
 }
    
