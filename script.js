@@ -23,7 +23,7 @@ function divCreate(number){
         insideDiv.style.boxSizing="border-box";
         div.appendChild(insideDiv);
         insideDiv.addEventListener("mouseenter",(event)=>{
-            insideDiv.style.backgroundColor="orange";
+            insideDiv.style.backgroundColor=`rgb(${getRandomRgbColor()},${getRandomRgbColor()},${getRandomRgbColor()})`;
         })
        
        
@@ -44,9 +44,23 @@ function getButtonClicked(){
 
 getButtonClicked();
 
-function excitingGridDlt(indiv){
+function excitingGridDlt(){
         while(div.firstChild){
             div.removeChild(div.firstChild);
         }
 }
+
+
+function getRandomRgbColor(){
+    let colorNumber=Math.floor(Math.random()*255);
+    return colorNumber;
+
+    
+
+}
+
+
+
+
+
    
